@@ -1,100 +1,148 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf3u3g4vuhdqs"]
+[gd_scene load_steps=13 format=3 uid="uid://bf3u3g4vuhdqs"]
 
-[ext_resource type="Texture2D" uid="uid://plxniwhkkrdt" path="res://img/background.jpg" id="1_8oilq"]
+[ext_resource type="Texture2D" uid="uid://ddfuqwknvaqx" path="res://img/grass.jpg" id="1_3i0f2"]
 [ext_resource type="Script" path="res://draggable.gd" id="1_tn4fq"]
-[ext_resource type="Texture2D" uid="uid://bj5l4cah0xp32" path="res://icon.svg" id="2_b4h3f"]
-[ext_resource type="Script" path="res://draggable_img.gd" id="3_88fjg"]
+[ext_resource type="Texture2D" uid="uid://dx8kcao06wfxv" path="res://img/field-rectangle.png" id="2_pp5il"]
+[ext_resource type="Script" path="res://field.gd" id="3_qhnba"]
 [ext_resource type="Texture2D" uid="uid://b2nckwrpf3u3l" path="res://img/tile_0110.png" id="3_xjf50"]
+[ext_resource type="Script" path="res://players.gd" id="4_rwq0g"]
 [ext_resource type="Texture2D" uid="uid://wbwio3igqkxt" path="res://img/tile_0096.png" id="4_xuawc"]
 [ext_resource type="Texture2D" uid="uid://bmtr4mpf6c43o" path="res://img/tile_0121.png" id="5_f6gdl"]
 [ext_resource type="Texture2D" uid="uid://dlo3dgnoh0ekw" path="res://img/tile_0099.png" id="6_phqrv"]
 [ext_resource type="Texture2D" uid="uid://cnn7g56t6ien2" path="res://img/tile_0111.png" id="7_6qbmy"]
+[ext_resource type="Texture2D" uid="uid://bf6ut82ecb0t0" path="res://img/piece.png" id="10_8fkmh"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Theme" id="Theme_w7sam"]
+
+[node name="Control" type="Control"]
 texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_w7sam")
 
-[node name="Screenshot2025-03-04221445" type="Sprite2D" parent="."]
-position = Vector2(186, 388)
-texture = ExtResource("1_8oilq")
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(0.34273, 0.678201, 0.25417, 1)
+position = Vector2(0, 384)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3i0f2")
+metadata/_edit_lock_ = true
 
-[node name="Icon3" type="Area2D" parent="."]
+[node name="Field" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 36.0
+offset_top = 58.0
+offset_right = 1260.0
+offset_bottom = 2480.0
+scale = Vector2(0.2, 0.2)
+mouse_filter = 2
+texture = ExtResource("2_pp5il")
+script = ExtResource("3_qhnba")
+
+[node name="FieldToggle" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.977
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -15.5
+offset_right = -12.0
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(21, 15)
+mouse_default_cursor_shape = 2
+text = "field"
+
+[node name="Players" type="Node2D" parent="."]
+texture_filter = 1
+script = ExtResource("4_rwq0g")
+
+[node name="Qwik" type="Area2D" parent="Players"]
 modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(265, 671)
-scale = Vector2(3, 3)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("3_xjf50")
-
-[node name="Icon4" type="Area2D" parent="."]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(131, 671)
-scale = Vector2(3, 3)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("4_xuawc")
-
-[node name="Icon5" type="Area2D" parent="."]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(66, 671)
-scale = Vector2(3, 3)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("5_f6gdl")
-
-[node name="Icon6" type="Area2D" parent="."]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(328, 671)
-scale = Vector2(3, 3)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("6_phqrv")
-
-[node name="Icon7" type="Area2D" parent="."]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(199, 671)
-scale = Vector2(3, 3)
+position = Vector2(167, 568)
+scale = Vector2(2, 2)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("7_6qbmy")
 
-[node name="Icon8" type="Area2D" parent="."]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(259, 79)
-scale = Vector2(3, 3)
+[node name="B3" type="Area2D" parent="Players"]
+modulate = Color(0.999998, 0.488739, 0.586904, 1)
+position = Vector2(233, 568)
+scale = Vector2(2, 2)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("3_xjf50")
 
-[node name="Icon9" type="Area2D" parent="."]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(125, 79)
-scale = Vector2(3, 3)
+[node name="B2" type="Area2D" parent="Players"]
+modulate = Color(0.999998, 0.488739, 0.586904, 1)
+position = Vector2(99, 568)
+scale = Vector2(2, 2)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("4_xuawc")
 
-[node name="Icon10" type="Area2D" parent="."]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(60, 79)
-scale = Vector2(3, 3)
+[node name="B1" type="Area2D" parent="Players"]
+modulate = Color(0.999998, 0.488739, 0.586904, 1)
+position = Vector2(34, 568)
+scale = Vector2(2, 2)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("5_f6gdl")
 
-[node name="Icon11" type="Area2D" parent="."]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(322, 79)
-scale = Vector2(3, 3)
+[node name="B4" type="Area2D" parent="Players"]
+modulate = Color(0.999998, 0.488739, 0.586904, 1)
+position = Vector2(296, 568)
+scale = Vector2(2, 2)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("6_phqrv")
 
-[node name="Icon12" type="Area2D" parent="."]
+[node name="Qwik2" type="Area2D" parent="Players"]
 modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(193, 79)
-scale = Vector2(3, 3)
+position = Vector2(157, 26)
+scale = Vector2(2, 2)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("7_6qbmy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0.960438, 0.0499275, 0.620434, 1)
-offset_left = 288.0
-offset_top = 57.0
-offset_right = 580.0
-offset_bottom = 185.0
-texture = ExtResource("2_b4h3f")
-script = ExtResource("3_88fjg")
+[node name="T3" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(223, 26)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("10_8fkmh")
 
-[connection signal="gui_input" from="TextureRect" to="TextureRect" method="_gui_input"]
+[node name="T2" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(89, 26)
+scale = Vector2(2, 2)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("4_xuawc")
+
+[node name="T1" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(24, 26)
+scale = Vector2(2, 2)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("5_f6gdl")
+
+[node name="T4" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(286, 26)
+scale = Vector2(2, 2)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("6_phqrv")
+
+[node name="Undo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 574.0
+offset_right = 49.0
+offset_bottom = 605.0
+text = "back"
+
+[connection signal="pressed" from="FieldToggle" to="Field" method="toggle_field"]
+[connection signal="pressed" from="Undo" to="Players" method="_on_undo_pressed"]

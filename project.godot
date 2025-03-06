@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=371
-window/size/viewport_height=771
+window/size/viewport_width=341
+window/size/viewport_height=606
 window/stretch/mode="canvas_items"
 
 [input_devices]

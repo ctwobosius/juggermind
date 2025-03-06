@@ -27,6 +27,7 @@ signal released
 @export var origin := Vector2.ZERO
 var prev_cursor_shape
 const TWEEN_DURATION := 0.125
+var initial_scale := scale
 
 
 ## The Sprite node that will be used to display the texture
@@ -82,7 +83,7 @@ func _physics_process(delta) -> void:
 	# Otherwise, if the mouse button was pressed on the previous frame but now isn't, the object is released
 	if not Input.is_mouse_button_pressed(input_method) and mb_pressed:
 		Input.set_default_cursor_shape(prev_cursor_shape)
-		create_tween().tween_property(self, "scale", Vector2.ONE * 3.25, TWEEN_DURATION)
+		create_tween().tween_property(self, "scale", initial_scale * 1.125, TWEEN_DURATION)
 		if return_to_origin:
 			position = origin
 		mb_pressed = false
@@ -115,16 +116,16 @@ func update_default_collider() -> void:
 
 func _on_mouse_enter() -> void:
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	create_tween().tween_property(self, "scale", Vector2.ONE * 3.25, TWEEN_DURATION)
+	create_tween().tween_property(self, "scale", initial_scale * 1.125, TWEEN_DURATION)
 
 func _on_mouse_exit() -> void:
 	Input.set_default_cursor_shape()
-	create_tween().tween_property(self, "scale", Vector2.ONE * 3, TWEEN_DURATION)
+	create_tween().tween_property(self, "scale", initial_scale, TWEEN_DURATION)
 
 func _on_input_event(viewport, event, shape_idx) -> void:
 	# Detect when mouse button is clicked inside the area2d
 	if event is InputEventMouseButton:
-		create_tween().tween_property(self, "scale", Vector2.ONE * 4.0, TWEEN_DURATION)
+		create_tween().tween_property(self, "scale", initial_scale * 1.375, TWEEN_DURATION)
 		is_grabbed = event.is_pressed()
 		if is_grabbed:
 			prev_cursor_shape = Input.get_current_cursor_shape()
