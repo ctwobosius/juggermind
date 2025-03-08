@@ -1,7 +1,7 @@
 extends TextureRect
 
-const FIELD_RECTANGLE = preload("res://img/field-rectangle.png")
-const FIELD_OCTAGON = preload("res://img/field-octagon.png")
+const FIELD_RECTANGLE = preload("res://img/field-rectangle.svg")
+const FIELD_OCTAGON = preload("res://img/field-octagon.svg")
 var is_rectangle_field := true
 
 func toggle_field() -> void:

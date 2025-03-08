@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmh682k3e8y1h"
-path="res://.godot/imported/field-octagon.png-7ad70fae82592b2fb98ce2313d2b93f2.ctex"
+uid="uid://cdlvlhab1ywpx"
+path="res://.godot/imported/field-octagon.svg-17b8f49594e022eefce4c784c8b8347a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/field-octagon.png"
-dest_files=["res://.godot/imported/field-octagon.png-7ad70fae82592b2fb98ce2313d2b93f2.ctex"]
+source_file="res://img/field-octagon.svg"
+dest_files=["res://.godot/imported/field-octagon.svg-17b8f49594e022eefce4c784c8b8347a.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bf3u3g4vuhdqs"]
 
 [ext_resource type="Texture2D" uid="uid://ddfuqwknvaqx" path="res://img/grass.jpg" id="1_3i0f2"]
-[ext_resource type="Script" path="res://draggable.gd" id="1_tn4fq"]
-[ext_resource type="Texture2D" uid="uid://dx8kcao06wfxv" path="res://img/field-rectangle.png" id="2_pp5il"]
-[ext_resource type="Script" path="res://field.gd" id="3_qhnba"]
+[ext_resource type="Script" uid="uid://dgx38ata6deli" path="res://draggable.gd" id="1_tn4fq"]
+[ext_resource type="Texture2D" uid="uid://d3sewonr7ww01" path="res://img/field-rectangle.svg" id="2_efxa6"]
+[ext_resource type="Script" uid="uid://b2syhq61npepd" path="res://field.gd" id="3_qhnba"]
 [ext_resource type="Texture2D" uid="uid://b2nckwrpf3u3l" path="res://img/tile_0110.png" id="3_xjf50"]
-[ext_resource type="Script" path="res://players.gd" id="4_rwq0g"]
+[ext_resource type="Script" uid="uid://cv6c27tryvi35" path="res://players.gd" id="4_rwq0g"]
 [ext_resource type="Texture2D" uid="uid://wbwio3igqkxt" path="res://img/tile_0096.png" id="4_xuawc"]
 [ext_resource type="Texture2D" uid="uid://bmtr4mpf6c43o" path="res://img/tile_0121.png" id="5_f6gdl"]
 [ext_resource type="Texture2D" uid="uid://dlo3dgnoh0ekw" path="res://img/tile_0099.png" id="6_phqrv"]
@@ -41,7 +41,7 @@ offset_right = 1260.0
 offset_bottom = 2480.0
 scale = Vector2(0.2, 0.2)
 mouse_filter = 2
-texture = ExtResource("2_pp5il")
+texture = ExtResource("2_efxa6")
 script = ExtResource("3_qhnba")
 
 [node name="FieldToggle" type="Button" parent="."]
