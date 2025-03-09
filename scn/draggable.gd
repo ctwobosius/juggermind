@@ -21,6 +21,8 @@ signal released
 		sprite.texture = texture
 		# Update the default_collider with the shape and size of the sprite, if it exists
 		update_default_collider()
+		#sprite.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		#sprite.position = -texture.get_size() / 2
 ## Whether or not the sprite should return to it's starting position when released
 @export var return_to_origin := false
 ## The position the sprite will return to when released
@@ -31,7 +33,7 @@ var initial_scale := scale
 
 
 ## The Sprite node that will be used to display the texture
-var sprite := Sprite2D.new()
+var sprite := Sprite2D.new()#preload("res://scn/player_texture.tscn").instantiate()
 ## The default collider. It is automatically created and updated to match the size of the sprite
 var default_collider : CollisionShape2D
 ## Whether or not the sprite is currently grabbed

@@ -1,4 +1,5 @@
 extends Node2D
+@onready var options: PlayerOptions = $Options
 
 var undo_positions := PackedVector2Array()
 var undo_players := []
@@ -8,6 +9,8 @@ var redo_positions := PackedVector2Array()
 var last_undone_player : Player
 var last_undone_pos : Vector2
 
+var selected_player: Player
+
 signal no_undo_left
 signal no_redo_left
 signal undo_valid
@@ -15,6 +18,7 @@ signal redo_valid
 
 func add_player(player: Player) -> void:
 	player.connect("grabbed", record_prev_position.bind(player))
+	player.connect("held", open_change_type.bind(player))
 	player.record_initial_position()
 	add_child(player)
 
@@ -59,10 +63,18 @@ func _on_redo_pressed() -> void:
 
 
 func _on_reset_pressed() -> void:
-	var i = 0
-	for player: Player in get_children():
-		player.reset_to_initial_position()
-		clear_redos()
-		clear_undos()
-		
-		
+	for maybe_player: Node in get_children():
+		if maybe_player is Player:
+			maybe_player.reset_to_initial_position()
+	clear_redos()
+	clear_undos()
+
+
+func _on_options_change_type(type: Player.Type) -> void:
+	if is_instance_valid(selected_player):
+		selected_player.change_type(type)
+
+func open_change_type(player: Player):
+	selected_player = player
+	options.global_position = get_global_mouse_position()
+	options.appear()

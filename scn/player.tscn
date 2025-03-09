@@ -5,3 +5,12 @@
 
 [node name="Player" instance=ExtResource("1_386vx")]
 script = ExtResource("2_dltx8")
+
+[node name="HoldTimer" type="Timer" parent="." index="0"]
+process_callback = 0
+wait_time = 0.25
+one_shot = true
+
+[connection signal="grabbed" from="." to="." method="_on_grabbed"]
+[connection signal="released" from="." to="." method="_on_released"]
+[connection signal="timeout" from="HoldTimer" to="." method="_on_hold_timer_timeout"]

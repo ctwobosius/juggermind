@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4ruhk6wnaal"]
+
+[ext_resource type="Script" uid="uid://dg3b6ix7ej2jw" path="res://scn/player_texture.gd" id="1_75fvg"]
+
+[node name="PlayerTexture" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_75fvg")
