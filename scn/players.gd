@@ -76,5 +76,4 @@ func _on_options_change_type(type: Player.Type) -> void:
 
 func open_change_type(player: Player):
 	selected_player = player
-	options.global_position = get_global_mouse_position()
 	options.appear()

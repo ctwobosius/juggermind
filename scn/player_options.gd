@@ -22,6 +22,7 @@ func select_type(type: Player.Type) -> void:
 	disappear()
 
 func disappear() -> void:
+	set_physics_process(false)
 	var delay := 0.0
 	for child: Button in options.get_children():
 		var tween := create_tween()
@@ -39,3 +40,10 @@ func appear() -> void:
 		child.show()
 		create_tween().tween_property(child, "modulate:a", 1, 0.125).set_delay(delay)
 		delay += 0.03
+	set_physics_process(true)
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("mouse"):
+		disappear()
+	elif Input.is_action_pressed("mouse"):
+		global_position = get_global_mouse_position()

@@ -49,4 +49,4 @@ func _on_released() -> void:
 
 func change_color(c: Color) -> void:
 	$Light.color = c
-	modulate = c * 1.25
+	modulate = c
