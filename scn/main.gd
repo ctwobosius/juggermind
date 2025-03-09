@@ -15,6 +15,5 @@ func spawn_players_in(container: HBoxContainer) -> void:
 		if maybe_control is not VSeparator:
 			var player := PLAYER.instantiate()
 			player.modulate = container.modulate
-			players.add_player(player)
 			player.global_position = maybe_control.global_position + maybe_control.size / 2
-			print(player.global_position)
+			players.add_player(player)

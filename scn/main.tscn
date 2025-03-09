@@ -21,12 +21,10 @@ theme = SubResource("Theme_w7sam")
 script = ExtResource("1_dg77c")
 
 [node name="background" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.34273, 0.678201, 0.25417, 1)
-position = Vector2(0, 384)
+position = Vector2(289, 499)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3i0f2")
-metadata/_edit_lock_ = true
 
 [node name="Layout" type="VBoxContainer" parent="."]
 layout_mode = 0
