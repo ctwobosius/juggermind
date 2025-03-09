@@ -5,7 +5,7 @@ var undo_players := []
 var redo_players := []
 var redo_positions := PackedVector2Array()
 
-var last_undone_player : DraggableSprite2D
+var last_undone_player : Player
 var last_undone_pos : Vector2
 
 signal no_undo_left
@@ -13,15 +13,14 @@ signal no_redo_left
 signal undo_valid
 signal redo_valid
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	for child: DraggableSprite2D in get_children():
-		child.connect("grabbed", record_prev_position.bind(child))
-		child.record_initial_position()
+func add_player(player: Player) -> void:
+	player.connect("grabbed", record_prev_position.bind(player))
+	player.record_initial_position()
+	add_child(player)
 
-func record_prev_position(child: DraggableSprite2D) -> void:
-	undo_positions.append(child.global_position)
-	undo_players.append(child)
+func record_prev_position(player: Player) -> void:
+	undo_positions.append(player.global_position)
+	undo_players.append(player)
 	clear_redos()
 
 func clear_redos() -> void:
@@ -37,7 +36,7 @@ func undo_or_redo_from_array(players: Array, player_positions: PackedVector2Arra
 	if prev_pos_idx < 0:
 		return false
 	var prev_pos := player_positions[prev_pos_idx]
-	var prev_player : DraggableSprite2D = players.pop_back()
+	var prev_player : Player = players.pop_back()
 	player_positions.remove_at(prev_pos_idx)
 	last_undone_player = prev_player
 	last_undone_pos = prev_player.global_position
@@ -61,8 +60,8 @@ func _on_redo_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	var i = 0
-	for child: DraggableSprite2D in get_children():
-		child.reset_to_initial_position()
+	for player: Player in get_children():
+		player.reset_to_initial_position()
 		clear_redos()
 		clear_undos()
 		

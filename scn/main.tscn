@@ -1,17 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bf3u3g4vuhdqs"]
+[gd_scene load_steps=7 format=3 uid="uid://bf3u3g4vuhdqs"]
 
 [ext_resource type="Texture2D" uid="uid://ddfuqwknvaqx" path="res://img/grass.jpg" id="1_3i0f2"]
 [ext_resource type="Script" uid="uid://cprv3fpxmqgv5" path="res://scn/main.gd" id="1_dg77c"]
-[ext_resource type="Script" uid="uid://dgx38ata6deli" path="res://scn/draggable.gd" id="1_tn4fq"]
 [ext_resource type="Texture2D" uid="uid://d3sewonr7ww01" path="res://img/field-rectangle.svg" id="2_efxa6"]
 [ext_resource type="Script" uid="uid://b2syhq61npepd" path="res://scn/field.gd" id="3_qhnba"]
-[ext_resource type="Texture2D" uid="uid://b2nckwrpf3u3l" path="res://img/tile_0110.png" id="3_xjf50"]
 [ext_resource type="Script" uid="uid://cv6c27tryvi35" path="res://scn/players.gd" id="4_rwq0g"]
-[ext_resource type="Texture2D" uid="uid://wbwio3igqkxt" path="res://img/tile_0096.png" id="4_xuawc"]
-[ext_resource type="Texture2D" uid="uid://bmtr4mpf6c43o" path="res://img/tile_0121.png" id="5_f6gdl"]
-[ext_resource type="Texture2D" uid="uid://dlo3dgnoh0ekw" path="res://img/tile_0099.png" id="6_phqrv"]
-[ext_resource type="Texture2D" uid="uid://cnn7g56t6ien2" path="res://img/tile_0111.png" id="7_6qbmy"]
-[ext_resource type="Texture2D" uid="uid://bf6ut82ecb0t0" path="res://img/piece.png" id="10_8fkmh"]
 
 [sub_resource type="Theme" id="Theme_w7sam"]
 
@@ -52,9 +45,16 @@ size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="PlayerSpawnTop" type="HBoxContainer" parent="Layout/DiagramGUI/Diagram"]
+modulate = Color(1, 0.354233, 0.463421, 1)
 custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 mouse_filter = 2
+
+[node name="Spacer" type="VSeparator" parent="Layout/DiagramGUI/Diagram/PlayerSpawnTop"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
 
 [node name="1" type="Control" parent="Layout/DiagramGUI/Diagram/PlayerSpawnTop"]
 layout_mode = 2
@@ -81,6 +81,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 
+[node name="Spacer2" type="VSeparator" parent="Layout/DiagramGUI/Diagram/PlayerSpawnTop"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
 [node name="Field" type="TextureRect" parent="Layout/DiagramGUI/Diagram"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -91,9 +97,16 @@ stretch_mode = 5
 script = ExtResource("3_qhnba")
 
 [node name="PlayerSpawnBottom" type="HBoxContainer" parent="Layout/DiagramGUI/Diagram"]
+modulate = Color(0.300383, 0.638536, 1, 1)
 custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 mouse_filter = 2
+
+[node name="Spacer" type="VSeparator" parent="Layout/DiagramGUI/Diagram/PlayerSpawnBottom"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
 
 [node name="1" type="Control" parent="Layout/DiagramGUI/Diagram/PlayerSpawnBottom"]
 layout_mode = 2
@@ -119,6 +132,12 @@ mouse_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+
+[node name="Spacer2" type="VSeparator" parent="Layout/DiagramGUI/Diagram/PlayerSpawnBottom"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
 
 [node name="FieldToggle" type="Button" parent="Layout/DiagramGUI"]
 layout_mode = 2
@@ -148,75 +167,6 @@ text = "Reset"
 [node name="Players" type="Node2D" parent="."]
 texture_filter = 1
 script = ExtResource("4_rwq0g")
-
-[node name="Qwik2" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(250, 40)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("7_6qbmy")
-
-[node name="T3" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(316, 40)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("10_8fkmh")
-
-[node name="T2" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(182, 40)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("4_xuawc")
-
-[node name="T1" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(117, 40)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("5_f6gdl")
-
-[node name="T4" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(379, 40)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("6_phqrv")
-
-[node name="Qwik" type="Area2D" parent="Players"]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(261, 893)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("7_6qbmy")
-
-[node name="B3" type="Area2D" parent="Players"]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(327, 893)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("3_xjf50")
-
-[node name="B2" type="Area2D" parent="Players"]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(193, 893)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("4_xuawc")
-
-[node name="B1" type="Area2D" parent="Players"]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(128, 893)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("5_f6gdl")
-
-[node name="B4" type="Area2D" parent="Players"]
-modulate = Color(0.999998, 0.488739, 0.586904, 1)
-position = Vector2(390, 893)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("6_phqrv")
 
 [connection signal="pressed" from="Layout/DiagramGUI/FieldToggle" to="Layout/DiagramGUI/Diagram/Field" method="toggle_field"]
 [connection signal="pressed" from="Layout/Options/Undo" to="Players" method="_on_undo_pressed"]

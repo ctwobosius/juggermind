@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfuxmwf68q3m5"]
+
+[ext_resource type="Script" uid="uid://dgx38ata6deli" path="res://scn/draggable.gd" id="1_w2fds"]
+[ext_resource type="Texture2D" uid="uid://bf6ut82ecb0t0" path="res://img/piece.png" id="2_eae8x"]
+
+[node name="T3" type="Area2D"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+script = ExtResource("1_w2fds")
+texture = ExtResource("2_eae8x")
