@@ -149,6 +149,40 @@ text = "Reset"
 texture_filter = 1
 script = ExtResource("4_rwq0g")
 
+[node name="Qwik2" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(250, 40)
+scale = Vector2(4, 4)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("7_6qbmy")
+
+[node name="T3" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(316, 40)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("10_8fkmh")
+
+[node name="T2" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(182, 40)
+scale = Vector2(4, 4)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("4_xuawc")
+
+[node name="T1" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(117, 40)
+scale = Vector2(4, 4)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("5_f6gdl")
+
+[node name="T4" type="Area2D" parent="Players"]
+modulate = Color(0.531166, 0.818648, 1, 1)
+position = Vector2(379, 40)
+scale = Vector2(4, 4)
+script = ExtResource("1_tn4fq")
+texture = ExtResource("6_phqrv")
+
 [node name="Qwik" type="Area2D" parent="Players"]
 modulate = Color(0.999998, 0.488739, 0.586904, 1)
 position = Vector2(261, 893)
@@ -180,40 +214,6 @@ texture = ExtResource("5_f6gdl")
 [node name="B4" type="Area2D" parent="Players"]
 modulate = Color(0.999998, 0.488739, 0.586904, 1)
 position = Vector2(390, 893)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("6_phqrv")
-
-[node name="Qwik2" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(251, 26)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("7_6qbmy")
-
-[node name="T3" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(317, 26)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("10_8fkmh")
-
-[node name="T2" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(183, 26)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("4_xuawc")
-
-[node name="T1" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(118, 26)
-scale = Vector2(4, 4)
-script = ExtResource("1_tn4fq")
-texture = ExtResource("5_f6gdl")
-
-[node name="T4" type="Area2D" parent="Players"]
-modulate = Color(0.531166, 0.818648, 1, 1)
-position = Vector2(380, 26)
 scale = Vector2(4, 4)
 script = ExtResource("1_tn4fq")
 texture = ExtResource("6_phqrv")

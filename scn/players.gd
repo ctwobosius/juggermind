@@ -2,7 +2,6 @@ extends Node2D
 
 var undo_positions := PackedVector2Array()
 var undo_players := []
-var initial_positions := PackedVector2Array()
 var redo_players := []
 var redo_positions := PackedVector2Array()
 
@@ -18,12 +17,20 @@ signal redo_valid
 func _ready() -> void:
 	for child: DraggableSprite2D in get_children():
 		child.connect("grabbed", record_prev_position.bind(child))
-		initial_positions.append(child.global_position)
+		child.record_initial_position()
 
 func record_prev_position(child: DraggableSprite2D) -> void:
 	undo_positions.append(child.global_position)
 	undo_players.append(child)
+	clear_redos()
+
+func clear_redos() -> void:
 	redo_positions.clear()
+	redo_players.clear()
+
+func clear_undos() -> void:
+	undo_positions.clear()
+	undo_players.clear()
 
 func undo_or_redo_from_array(players: Array, player_positions: PackedVector2Array) -> bool:
 	var prev_pos_idx := player_positions.size() - 1
@@ -52,6 +59,11 @@ func _on_redo_pressed() -> void:
 		undo_positions.append(last_undone_pos)
 
 
-
 func _on_reset_pressed() -> void:
-	pass # Replace with function body.
+	var i = 0
+	for child: DraggableSprite2D in get_children():
+		child.reset_to_initial_position()
+		clear_redos()
+		clear_undos()
+		
+		
