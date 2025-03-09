@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddd8aqkd6njdk"]
+[gd_scene load_steps=3 format=3 uid="uid://ddd8aqkd6njdk"]
 
 [ext_resource type="Script" uid="uid://w4fl0sjij3q7" path="res://scn/player_options.gd" id="1_j525n"]
+[ext_resource type="Theme" uid="uid://b5oisshi1yyn" path="res://scn/main.theme" id="1_v86qr"]
 
 [node name="Panel" type="Panel"]
 offset_right = 40.0
+theme = ExtResource("1_v86qr")
 script = ExtResource("1_j525n")
 
 [node name="Options" type="VBoxContainer" parent="."]

@@ -8,7 +8,7 @@ signal change_type
 func _ready() -> void:
 	for type in Player.TYPE_TO_TEXTURE:
 		var button = Button.new()
-		var type_name: StringName = Player.Type.keys()[type]
+		var type_name: StringName = (Player.Type.keys()[type]).capitalize()
 		button.text = type_name
 		button.name = type_name
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND

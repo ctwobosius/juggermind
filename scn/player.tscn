@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c01y7l1gkdhyg"]
+[gd_scene load_steps=4 format=3 uid="uid://c01y7l1gkdhyg"]
 
 [ext_resource type="PackedScene" uid="uid://cfuxmwf68q3m5" path="res://scn/draggable_sprite.tscn" id="1_386vx"]
 [ext_resource type="Script" uid="uid://d1yvil270ird1" path="res://scn/player.gd" id="2_dltx8"]
+[ext_resource type="Texture2D" uid="uid://hf3pjayw7hlq" path="res://img/light.webp" id="3_diy2p"]
 
 [node name="Player" instance=ExtResource("1_386vx")]
 script = ExtResource("2_dltx8")
@@ -10,6 +11,9 @@ script = ExtResource("2_dltx8")
 process_callback = 0
 wait_time = 0.25
 one_shot = true
+
+[node name="Light" type="PointLight2D" parent="." index="1"]
+texture = ExtResource("3_diy2p")
 
 [connection signal="grabbed" from="." to="." method="_on_grabbed"]
 [connection signal="released" from="." to="." method="_on_released"]

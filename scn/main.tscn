@@ -1,13 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf3u3g4vuhdqs"]
+[gd_scene load_steps=9 format=3 uid="uid://bf3u3g4vuhdqs"]
 
 [ext_resource type="Texture2D" uid="uid://ddfuqwknvaqx" path="res://img/grass.jpg" id="1_3i0f2"]
 [ext_resource type="Script" uid="uid://cprv3fpxmqgv5" path="res://scn/main.gd" id="1_dg77c"]
+[ext_resource type="Theme" uid="uid://b5oisshi1yyn" path="res://scn/main.theme" id="1_vnkvy"]
 [ext_resource type="Texture2D" uid="uid://d3sewonr7ww01" path="res://img/field-rectangle.svg" id="2_efxa6"]
 [ext_resource type="Script" uid="uid://b2syhq61npepd" path="res://scn/field.gd" id="3_qhnba"]
 [ext_resource type="Script" uid="uid://cv6c27tryvi35" path="res://scn/players.gd" id="4_rwq0g"]
 [ext_resource type="PackedScene" uid="uid://ddd8aqkd6njdk" path="res://scn/player_options.tscn" id="6_nq6di"]
 
-[sub_resource type="Theme" id="Theme_w7sam"]
+[sub_resource type="Environment" id="Environment_nq6di"]
+background_mode = 3
+glow_enabled = true
+glow_hdr_threshold = 0.5
 
 [node name="Main" type="Control"]
 texture_filter = 1
@@ -18,11 +22,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = SubResource("Theme_w7sam")
+theme = ExtResource("1_vnkvy")
 script = ExtResource("1_dg77c")
 
 [node name="background" type="Sprite2D" parent="."]
-modulate = Color(0.34273, 0.678201, 0.25417, 1)
+modulate = Color(0.272221, 0.218537, 0.32238, 1)
 position = Vector2(289, 499)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3i0f2")
@@ -87,6 +91,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.75
 
 [node name="Field" type="TextureRect" parent="Layout/DiagramGUI/Diagram"]
+modulate = Color(1.25, 1.25, 1.25, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -142,7 +147,7 @@ size_flags_stretch_ratio = 0.75
 layout_mode = 2
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-text = "field"
+text = "Field"
 
 [node name="Options" type="HBoxContainer" parent="Layout"]
 layout_mode = 2
@@ -168,6 +173,9 @@ script = ExtResource("4_rwq0g")
 
 [node name="Options" parent="Players" instance=ExtResource("6_nq6di")]
 z_index = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nq6di")
 
 [connection signal="pressed" from="Layout/DiagramGUI/FieldToggle" to="Layout/DiagramGUI/Diagram/Field" method="toggle_field"]
 [connection signal="pressed" from="Layout/Options/Undo" to="Players" method="_on_undo_pressed"]

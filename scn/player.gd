@@ -31,6 +31,7 @@ func change_type(type: Type):
 	texture = TYPE_TO_TEXTURE[type]
 	initial_scale = Vector2.ONE * 4
 	scale = initial_scale
+	$Light.texture_scale = 0.25
 
 
 func _on_grabbed() -> void:
@@ -45,3 +46,7 @@ func _on_hold_timer_timeout() -> void:
 
 func _on_released() -> void:
 	hold_timer.stop()
+
+func change_color(c: Color) -> void:
+	$Light.color = c
+	modulate = c * 1.25
