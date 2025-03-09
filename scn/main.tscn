@@ -140,7 +140,6 @@ size_flags_stretch_ratio = 0.75
 [node name="FieldToggle" type="Button" parent="Layout/DiagramGUI"]
 layout_mode = 2
 size_flags_vertical = 4
-mouse_filter = 2
 mouse_default_cursor_shape = 2
 text = "field"
 
